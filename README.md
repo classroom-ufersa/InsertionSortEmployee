@@ -1,2 +1,2 @@
-# strings_com_insertion_sort
+# strings com insertion sort
 Ordenação de strings com Inserion Sort
