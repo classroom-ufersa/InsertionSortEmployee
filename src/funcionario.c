@@ -63,3 +63,22 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
         }
     }
 }
+
+FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
+{
+    FILE *arquivo = fopen("funcionarios.txt", "r");
+    if (arquivo == NULL)
+    {
+        perror("Erro ao abrir o arquivo");
+        exit(1);
+    }
+    int i;
+    for (i = 0; !feof(arquivo); i++)
+    {
+        // Ler os arquivo funcionario
+        fscanf(arquivo, "%s %s %d", funcionario[i]->nome, funcionario[i]->cargo, &funcionario[i]->documento);
+    }
+
+    *tamanho = i;
+    return (arquivo);
+}
