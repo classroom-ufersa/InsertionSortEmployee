@@ -7,6 +7,10 @@ int main() {
     int opcao;
     Funcionario **funcs = (Funcionario **)malloc(10 * sizeof(Funcionario *));
     int numFuncionarios = 0;
+    FILE* arquivo = abrir_arquivo(funcs, &numFuncionarios);
+
+   
+    
 
     char nome[50];
     char cargo[50];
@@ -29,10 +33,18 @@ int main() {
                 scanf("%s", cargo);
                 printf("Digite o numero do documento do funcionario: ");
                 scanf("%d", &documento);
-                cria_funcionario(nome, cargo, &documento); 
+                if (numFuncionarios == 0)
+                {
+                    funcs[numFuncionarios] = cria_funcionario(nome, cargo, documento); 
+                    numFuncionarios++; 
+                    break;
+                }                
+                funcs[numFuncionarios+1] = cria_funcionario(nome, cargo, documento);
+                numFuncionarios++; 
                 break;
             case 2:
-                listar_funcionarios(funcs, numFuncionarios);
+                for (int i = 0; i < numFuncionarios; i++)
+                    printf("%s %s %d\n", funcs[i]->nome, funcs[i]->cargo, funcs[i]->documento);                    
                 break;
             default:
                 printf("Opcao inválida\n");

@@ -66,6 +66,8 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
 {
+    char nome[101], cargo[21];
+    int documento;
     FILE *arquivo = fopen("funcionarios.txt", "r");
     if (arquivo == NULL)
     {
@@ -73,11 +75,11 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
         exit(1);
     }
     int i;
-    for (i = 0; i < *tamanho; i++)
+    for (i = 0; !feof(arquivo); i++)
     {
         // Ler os arquivo funcionario
-        fscanf(arquivo, "%s %s %d", funcionario[i]->nome, funcionario[i]->cargo, &funcionario[i]->documento);
-        break; // Para de ler se nem todos os valores forem lidos com sucesso
+        fscanf(arquivo, "%s %s %d\n",nome,cargo,&documento);
+        funcionario[i]=cria_funcionario(nome,cargo,documento);
     }
 
     *tamanho = i;
