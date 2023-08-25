@@ -73,12 +73,14 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
         exit(1);
     }
     int i;
-    for (i = 0; !feof(arquivo); i++)
+    for (i = 0; i < *tamanho; i++)
     {
         // Ler os arquivo funcionario
         fscanf(arquivo, "%s %s %d", funcionario[i]->nome, funcionario[i]->cargo, &funcionario[i]->documento);
+        break; // Para de ler se nem todos os valores forem lidos com sucesso
     }
 
     *tamanho = i;
     return (arquivo);
 }
+
