@@ -17,6 +17,11 @@ Aqui está como o algoritmo funciona em termos gerais:
 
 ![Insertion Sort](https://th.bing.com/th/id/R.52464cf460b30d1022da21dc9d927de0?rik=kRMcpjXJT0y1bw&riu=http%3a%2f%2fwww.thagomizer.com%2fimg%2fInsertionSortInPlace.gif&ehk=vVtb0fIpEJJDvV4BNjGSBhyb3kw95pH2vSA%2bEpsiNxY%3d&risl=&pid=ImgRaw&r=0)
 
-No nosso caso o algoritmo foi implementado para ordenar uma lista de funcionários em ordem alfabética
+## Problemática  
+
+Implementar um algoritmo que manipula um tipo estruturado **Funcionarios** e mantém os funcionários ordenados em ordem alfabética em um arquivo usando **insertion sort**.
+
+### Funções utilizadas
+
 
 
