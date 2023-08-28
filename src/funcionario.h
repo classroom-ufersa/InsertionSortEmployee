@@ -19,4 +19,7 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho);
 */
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho);
 
+void grava_arquivo(Funcionario** funcionario,int tamanho);
+
+void imprime(Funcionario** funcionario, int tamanho, FILE* arquivo);
 #endif // FUNCIONARIO_H
