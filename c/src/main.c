@@ -43,8 +43,13 @@ int main() {
                 break;
             }
             case 2:
-                for (int i = 0; i < numFuncionarios; i++)
-                    printf("%s %s %d\n", funcs[i]->nome, funcs[i]->cargo, funcs[i]->documento);                    
+                if(numFuncionarios != 0){
+                    imprime(funcs, numFuncionarios);
+                }
+                else{
+                    printf("Nenhum Funcionario Cadastrado!\n");
+                }
+
                 break;
             default:
                 break;
