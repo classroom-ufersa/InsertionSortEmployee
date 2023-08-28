@@ -17,9 +17,6 @@ Aqui está como o algoritmo funciona em termos gerais:
 
 ![Insertion Sort](https://th.bing.com/th/id/R.52464cf460b30d1022da21dc9d927de0?rik=kRMcpjXJT0y1bw&riu=http%3a%2f%2fwww.thagomizer.com%2fimg%2fInsertionSortInPlace.gif&ehk=vVtb0fIpEJJDvV4BNjGSBhyb3kw95pH2vSA%2bEpsiNxY%3d&risl=&pid=ImgRaw&r=0)
 
-
-<img src="https://th.bing.com/th/id/R.52464cf460b30d1022da21dc9d927de0?rik=kRMcpjXJT0y1bw&riu=http%3a%2f%2fwww.thagomizer.com%2fimg%2fInsertionSortInPlace.gif&ehk=vVtb0fIpEJJDvV4BNjGSBhyb3kw95pH2vSA%2bEpsiNxY%3d&risl=&pid=ImgRaw&r=0"alt="Insertion Sort"style="width: 200px; height:44px;" width="200" height="44"/>
-
 No nosso caso o algoritmo foi implementado para ordenar uma lista de funcionários em ordem alfabética
 
 
