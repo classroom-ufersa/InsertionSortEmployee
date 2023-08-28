@@ -1,7 +1,7 @@
 # strings com insertion sort
 **Ordenação de strings com Inserion Sort**
 
-##O Insertion Sort, ou "Ordenação por Inserção", é um algoritmo de ordenação simples que funciona da seguinte maneira:
+O Insertion Sort, ou "Ordenação por Inserção", é um algoritmo de ordenação simples que funciona da seguinte maneira:
 
 Imagine que você tem um baralho de cartas em mãos, e deseja organizá-las em ordem crescente. Você pega uma carta por vez e a insere na posição correta dentro das cartas já ordenadas que você tem na mão.
 
@@ -15,6 +15,6 @@ Aqui está como o algoritmo funciona em termos gerais:
 
 **4-Resultado:** Depois de inserir todas as cartas, você obterá um baralho ordenado.
 
-###No nosso caso o algoritmo foi implementado para ordenar uma lista de funcionários em ordem alfabética
+No nosso caso o algoritmo foi implementado para ordenar uma lista de funcionários em ordem alfabética
 
 
