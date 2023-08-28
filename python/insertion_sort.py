@@ -1,4 +1,3 @@
-
 def insertion_sort(lista):
     tamanho = len(lista)
     for i in range(0, tamanho):

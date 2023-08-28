@@ -16,7 +16,7 @@ def salvar_arquivo(funcionarios):
             arquivo.write(f'{funcionario.nome}\t{funcionario.cargo}\t{funcionario.documento}\n')
 
 if __name__ == '__main__':
-    funcionarios = abrir_arquivo()
+    funcs = abrir_arquivo()
     novo_func = Funcionario('felipe', 'sinistro', '21323')
-    funcionarios.append(novo_func)
-    salvar_arquivo(funcionarios)
+    funcs.append(novo_func)
+    salvar_arquivo(funcs)
