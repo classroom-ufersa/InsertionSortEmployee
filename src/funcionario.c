@@ -100,7 +100,7 @@ fclose(arquivo);
 void imprime(Funcionario** funcionario, int tamanho, FILE* arquivo){
     insertion_sort_funcionarios(funcionario,tamanho);
     for(int contador = 0; contador < tamanho; contador++){
-    printf(arquivo,"%s\t %s\t %d\t", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
+    fprintf(arquivo,"%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
     }
 }
 
