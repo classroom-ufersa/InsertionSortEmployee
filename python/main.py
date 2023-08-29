@@ -1,5 +1,6 @@
 from Funcionario import Funcionario
 from Arquivo import *
+import time
 
 
 funcs = []
@@ -37,6 +38,7 @@ if __name__ == '__main__':
                 for func in funcs:
                     func.imprime_dados()
         
-            
+    start_time = time.time()            
     Funcionario.insertion_sort(funcs)
+    print(f'Elapsed time: {time.time() - start_time}')
     salvar_arquivo(funcs)
