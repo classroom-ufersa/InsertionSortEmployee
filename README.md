@@ -104,7 +104,8 @@ def insertion_sort(funcionarios):
 
     Melhor Insertion
     T(n) = O(n)
-    ```
+ ```
+
 # Vantagens e Desvantagens
 ## Vantagens 
 - Simples de se implementar
