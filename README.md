@@ -71,15 +71,15 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 ## Em Python
 - **Insertion Sort**
 ```
- @staticmethod
-    def insertion_sort(funcionarios):
-        for i in range(1, len(funcionarios)):
-            chave = funcionarios[i]
-            j = i - 1
-            while j >= 0 and chave.nome.upper() < funcionarios[j].nome.upper():
-                funcionarios[j + 1] = funcionarios[j]
-                j -= 1
-            funcionarios[j + 1] = chave
+@staticmethod
+def insertion_sort(funcionarios):
+    for i in range(1, len(funcionarios)):
+        chave = funcionarios[i]
+        j = i - 1
+        while j >= 0 and chave.nome.upper() < funcionarios[j].nome.upper():
+            funcionarios[j + 1] = funcionarios[j]
+            j -= 1
+        funcionarios[j + 1] = chave
 ```
 
 
