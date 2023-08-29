@@ -84,6 +84,7 @@ def insertion_sort(funcionarios):
 
 # Análise de complexidade
 ## Big-O
+O pior e médio caso do algoritmo de ordenação Insertion Sort é  T(n) = O(n²). o melhor caso desse algoritmo é T(n) = O(n).
 ```
    T(n) = c1 + (c2+c3+c4+c8)(n-1) + n(n-1)(c5+c6+c7)
 
@@ -98,12 +99,6 @@ def insertion_sort(funcionarios):
     T(n) = n²
 
     T(n) = O(n²)
-    
-    Pior e Medio Insertion
-    T(n) = O(n²)
-
-    Melhor Insertion
-    T(n) = O(n)
  ```
 
 # Vantagens e Desvantagens
