@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "funcionario.h"
+#include <time.h>
 
 struct funcionario
 {
@@ -28,6 +29,7 @@ Funcionario *cria_funcionario(char *nome, char *cargo, int documento)
 
 void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 {
+    double time_start = clock();
     int i, j;
     Funcionario *aux;
     // Laço principal:
@@ -63,6 +65,8 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
             }
         }
     }
+    double time_end = clock();
+    printf("Elapsed time: %lf\n", time_end - time_start);
 }
 //função que abre o arquivo txt  e faz a leitura dos funcionarios
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
