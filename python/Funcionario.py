@@ -22,3 +22,33 @@ class Funcionario:
     @documento.setter
     def documento(self, documento):
         self._documento = documento
+        
+    def imprime_dados(self):
+        print(f'{self.nome} {self.cargo} {self.documento}')
+        
+    @staticmethod
+    def insertion_sort(funcionarios):
+        for i in range(1, len(funcionarios)):
+            chave = funcionarios[i]
+            j = i - 1
+            while j >= 0 and chave.nome.upper() < funcionarios[j].nome.upper():
+                funcionarios[j + 1] = funcionarios[j]
+                j -= 1
+            funcionarios[j + 1] = chave
+        
+if __name__ == '__main__':
+    funcionarios = [
+    Funcionario("Maria", "Gerente", "123"),
+    Funcionario("João", "Analista", "456"),
+    Funcionario("Carlos", "Assistente", "789")
+]
+
+    print("Funcionários não ordenados:")
+    for func in funcionarios:
+        func.imprime_dados()
+
+    Funcionario.insertion_sort(funcionarios)
+
+    print("\nFuncionários ordenados por nome:")
+    for func in funcionarios:
+        func.imprime_dados()
