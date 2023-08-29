@@ -2,7 +2,11 @@
 
 Implementar um algoritmo que manipula um tipo estruturado **Funcionarios** e mantém os funcionários ordenados em ordem alfabética em um arquivo usando **insertion sort**.
 
-# strings com insertion sort
+## Desenvolvedores
+- [Carlos Gabriel Ferreira](https://github.com/GabasDev)
+- [Felipe Hidequel Santos da Silva](https://github.com/felipehidequel)
+- [Michely Vitoria Costa Felix](https://github.com/MichelyFelix)
+# Strings com insertion sort
 **Ordenação de strings com Inserion Sort**
 
 O Insertion Sort, ou "Ordenação por Inserção", é um algoritmo de ordenação simples que funciona da seguinte maneira:
