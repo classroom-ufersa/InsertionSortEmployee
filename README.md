@@ -27,7 +27,7 @@ Imagine que você tem um baralho de cartas em mãos, e deseja organizá-las em o
 
 # Funções utilizadas
 ## Em C
--**Insertion Sort**
+- **Insertion Sort**
 ```
 void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 {
