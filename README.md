@@ -70,4 +70,31 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 ```
 ## Em Python
 - **Insertion Sort**
+
+
+
+
+
+
+
+
+
+  **Funcionario cria_funcionario**
+Cria tipo estruturado Funcionario e preenche os seus campos
+
+
+**insertion_sort_funcionarios**
+Ordena por ordem alfabetica o campo "nome" de um array do tipo Funcionario
+
+
+**abrir_arquivo**
+Função abre o arquivo, ler ele e armazena em um vetor
+
+
+**void grava_arquivo**
+Grava os dados de um array de Funcionario em um arquivo de texto
+
+
+**imprime**
+Imprime na tela os dados de um array de Funcionario em um arquivo de texto
   
