@@ -83,6 +83,31 @@ def insertion_sort(funcionarios):
 ```
 
 # Análise de complexidade
+## Big-O
+    /* T(n) = c1 + (c2+c3+c4+c8)(n-1) + n(n-1)(c5+c6+c7)
 
+    T(n) = c + b(n-1) + n(n-1)*a
 
+    T(n) = c + bn - b + an² - an
 
+    T(n) = bn + an² - an
+
+    T(n) = n + n² - n
+
+    T(n) = n²
+
+    T(n) = O(n²)
+    
+    Pior e Medio Insertion
+    T(n) = O(n²)
+
+    Melhor Insertion
+    T(n) = O(n)
+    */
+# Vanatgens e Desvantagens
+## Vantagens
+- Simples de se implementar
+- É eficiente quando sem tem poucos dados e está parcialmente ordenado
+- É um algoritmo estavel
+  ## Desvantagens
+  - Quando se tem muitos dados não é muito eficiente 
