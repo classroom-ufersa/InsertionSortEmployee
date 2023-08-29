@@ -79,7 +79,7 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 
 
 
-  **Funcionario cria_funcionario**
+**Funcionario cria_funcionario**
 Cria tipo estruturado Funcionario e preenche os seus campos
 
 
