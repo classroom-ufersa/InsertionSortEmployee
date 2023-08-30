@@ -67,7 +67,7 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
         }
     }
     double time_end = clock();
-    printf("Elapsed time: %lf\n", time_end - time_start);
+    printf("Elapsed time: %e\n", time_end - time_start);
 }
 //função que abre o arquivo txt  e faz a leitura dos funcionarios
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)

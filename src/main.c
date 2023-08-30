@@ -11,8 +11,8 @@ int main() {
     int numFuncionarios = 0;
     FILE* arquivo = abrir_arquivo(funcs,&numFuncionarios);
 
-    char nome[50];
-    char cargo[50];
+    char nome[101];
+    char cargo[21];
     int documento;
 
     do {
@@ -28,9 +28,9 @@ int main() {
             case 1:
             if (numFuncionarios < N_FUNCIONARIOS){
                 printf("Digite o nome do funcionario: ");
-                scanf("%s", nome);
+                scanf(" %[^\n]", nome);
                 printf("Digite o cargo do funcionario: ");
-                scanf("%s", cargo);
+                scanf(" %[^\n]", cargo);
                 printf("Digite o numero do documento do funcionario: ");
                 scanf("%d", &documento);                
                 funcs[numFuncionarios] = cria_funcionario(nome, cargo, documento);
