@@ -58,6 +58,7 @@ int main() {
                 scanf("%d", &documento);                
                 funcs[numFuncionarios] = cria_funcionario(nome, cargo, documento);
                 numFuncionarios++; 
+                grava_arquivo(funcs, numFuncionarios);
                 break;
             }
             else{
@@ -71,10 +72,14 @@ int main() {
                 else{
                     printf("Nenhum Funcionario Cadastrado!\n");
                 }
-
                 break;
+             case 3:
+            printf("Saindo do programa...\n");
+            exit(1);
+            break;
             default:
-                break;
+            printf("Opção invalida");
+             break;
         }
     } while (opcao != 3);
 
