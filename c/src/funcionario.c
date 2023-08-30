@@ -17,6 +17,7 @@ Funcionario *cria_funcionario(char *nome, char *cargo, int documento)
     Funcionario *f = (Funcionario *)malloc(sizeof(Funcionario));
     if (f == NULL)
     {
+        printf("Erro ao alocar memoria!");
         exit(1);
     }
 
