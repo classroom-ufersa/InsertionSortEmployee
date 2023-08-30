@@ -35,7 +35,6 @@ int main() {
                 scanf("%d", &documento);                
                 funcs[numFuncionarios] = cria_funcionario(nome, cargo, documento);
                 numFuncionarios++; 
-                grava_arquivo(funcs, numFuncionarios);
                 break;
             }
             else{
@@ -55,6 +54,7 @@ int main() {
            break;
         }
     } while (opcao != 3);
+    grava_arquivo(funcs, numFuncionarios);
     int i;
     // Libera a memoria alocada para os funcionarios
     for ( i = 0; i < numFuncionarios; i++) {
