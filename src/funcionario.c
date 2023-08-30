@@ -94,6 +94,7 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
 //função usada para gravar os dados ordenados em um arquivo. 
 void grava_arquivo(Funcionario **funcionario, int tamanho)
 {
+    int contador;
     FILE *arquivo = fopen("funcionarios.txt", "w");
     if (arquivo == NULL)
     {
@@ -102,7 +103,7 @@ void grava_arquivo(Funcionario **funcionario, int tamanho)
     }
     
     insertion_sort_funcionarios(funcionario, tamanho);
-    for (int contador = 0; contador < tamanho; contador++)
+    for (contador = 0; contador < tamanho; contador++)
         fprintf(arquivo, "%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
 
     fclose(arquivo);
@@ -111,7 +112,8 @@ void grava_arquivo(Funcionario **funcionario, int tamanho)
 //função para imprimir os funcionarios, ordenando com a chamada da função insetion sort
 void imprime(Funcionario **funcionario, int tamanho)
 {
+    int contador;
     insertion_sort_funcionarios(funcionario, tamanho);
-    for (int contador = 0; contador < tamanho; contador++)
+    for (contador = 0; contador < tamanho; contador++)
         printf("%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
 }

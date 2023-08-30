@@ -55,9 +55,9 @@ int main() {
            break;
         }
     } while (opcao != 3);
-
+    int i;
     // Libera a memoria alocada para os funcionarios
-    for (int i = 0; i < numFuncionarios; i++) {
+    for ( i = 0; i < numFuncionarios; i++) {
         free(funcs[i]);
     }
     free(funcs);
