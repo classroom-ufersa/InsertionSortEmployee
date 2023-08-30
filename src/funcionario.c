@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "funcionario.h"
+#include <time.h>
 
 struct funcionario
 {
@@ -10,11 +11,13 @@ struct funcionario
     int documento;
 };
 
+//função de criar os funcionarios, alocando dinamicamente, copiando e armazenando na struct
 Funcionario *cria_funcionario(char *nome, char *cargo, int documento)
 {
     Funcionario *f = (Funcionario *)malloc(sizeof(Funcionario));
     if (f == NULL)
     {
+        printf("Erro ao alocar memoria!");
         exit(1);
     }
 
@@ -27,6 +30,7 @@ Funcionario *cria_funcionario(char *nome, char *cargo, int documento)
 
 void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 {
+    double time_start = clock();
     int i, j;
     Funcionario *aux;
     // Laço principal:
@@ -62,8 +66,10 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
             }
         }
     }
+    double time_end = clock();
+    printf("Elapsed time: %lf\n", time_end - time_start);
 }
-
+//função que abre o arquivo txt  e faz a leitura dos funcionarios
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
 {
     char nome[101], cargo[21];
@@ -74,33 +80,38 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
         perror("Erro ao abrir o arquivo");
         exit(1);
     }
+
     int i;
-    for (i = 0; !feof(arquivo); i++)
+    for (i = 0; fscanf(arquivo, "%100s %20s %d", nome, cargo, &documento) != EOF; i++)
     {
-        // Ler os arquivo funcionario
-        fscanf(arquivo, "%s %s %d\n",nome,cargo,&documento);
-        funcionario[i]=cria_funcionario(nome,cargo,documento);
+        funcionario[i] = cria_funcionario(nome, cargo, documento);
     }
 
     *tamanho = i;
     return (arquivo);
 }
 
-void grava_arquivo(Funcionario** funcionario,int tamanho){
-FILE* arquivo = fopen("funcionarios.txt", "wt");
-if(arquivo == NULL){
-    printf("Erro ao abrir arquivo!");
-    exit(1);
-}
-imprime(funcionario,tamanho,arquivo);
-fclose(arquivo);
-}
-
-
-void imprime(Funcionario** funcionario, int tamanho, FILE* arquivo){
-    insertion_sort_funcionarios(funcionario,tamanho);
-    for(int contador = 0; contador < tamanho; contador++){
-    printf(arquivo,"%s\t %s\t %d\t", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
+//função usada para gravar os dados ordenados em um arquivo. 
+void grava_arquivo(Funcionario **funcionario, int tamanho)
+{
+    FILE *arquivo = fopen("funcionarios.txt", "w");
+    if (arquivo == NULL)
+    {
+        printf("Erro ao abrir arquivo!");
+        exit(1);
     }
+    
+    insertion_sort_funcionarios(funcionario, tamanho);
+    for (int contador = 0; contador < tamanho; contador++)
+        fprintf(arquivo, "%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
+
+    fclose(arquivo);
 }
 
+//função para imprimir os funcionarios, ordenando com a chamada da função insetion sort
+void imprime(Funcionario **funcionario, int tamanho)
+{
+    insertion_sort_funcionarios(funcionario, tamanho);
+    for (int contador = 0; contador < tamanho; contador++)
+        printf("%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
+}
