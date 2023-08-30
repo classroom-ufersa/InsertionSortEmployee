@@ -9,9 +9,35 @@ int main() {
     int opcao;
     Funcionario **funcs = (Funcionario **)malloc(N_FUNCIONARIOS * sizeof(Funcionario *));
     int numFuncionarios = 0;
-    FILE* arquivo = abrir_arquivo(funcs, &numFuncionarios);
+   int main() {
+    int opcao;
+    Funcionario **funcs = (Funcionario **)malloc(N_FUNCIONARIOS * sizeof(Funcionario *));
+    int numFuncionarios = 0;
     
-
+  FILE *arquivo_anexar = fopen("funcionarios.txt", "a+");// abre um arquivo em modo de inclusão
+    if (arquivo_anexar == NULL) {
+        perror("Erro ao abrir o arquivo!");
+        exit(1);
+    }
+   
+    //contagem de funcionarios detro do arquivo 
+    while (fscanf(arquivo_anexar, "%*s %*s %*d\n") != EOF) {
+        numFuncionarios++;
+    }
+    
+    fseek(arquivo_anexar, 0, SEEK_SET);//move o ponteiro de leitura/escrita para o inicio do arquivo já que a+ aponta para o final do arquivo
+    //le os dados dos funcionarios que estão no arquivo e armazena na estrutura Funcionario
+    for (int i = 0; i < numFuncionarios; i++) {
+        funcs[i] = (Funcionario *)malloc(sizeof(Funcionario));
+        if (funcs[i] == NULL) {
+            perror("Erro ao alocar memoria");
+            exit(1);
+        }
+        fscanf(arquivo_anexar, "%s %s %d\n", funcs[i]->nome, funcs[i]->cargo, &funcs[i]->documento);
+    }
+    
+    fclose(arquivo_anexar);
+    
     char nome[50];
     char cargo[50];
     int documento;
@@ -56,7 +82,11 @@ int main() {
         }
     } while (opcao != 3);
 
-    grava_arquivo(funcs, numFuncionarios);
+   FILE *arquivoEscrita = fopen("funcionarios.txt", "w");
+    if (arquivoEscrita == NULL) {
+        perror("Erro ao abrir o arquivo");
+        exit(1);
+    }
 
     // Libera a memoria alocada para os funcionarios
     for (int i = 0; i < numFuncionarios; i++) {
