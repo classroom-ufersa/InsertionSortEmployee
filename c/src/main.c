@@ -9,10 +9,6 @@ int main() {
     int opcao;
     Funcionario **funcs = (Funcionario **)malloc(N_FUNCIONARIOS * sizeof(Funcionario *));
     int numFuncionarios = 0;
-   int main() {
-    int opcao;
-    Funcionario **funcs = (Funcionario **)malloc(N_FUNCIONARIOS * sizeof(Funcionario *));
-    int numFuncionarios = 0;
     
   FILE *arquivo_anexar = fopen("funcionarios.txt", "a+");// abre um arquivo em modo de inclusão
     if (arquivo_anexar == NULL) {
