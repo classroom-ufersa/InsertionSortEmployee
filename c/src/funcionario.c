@@ -67,7 +67,8 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
         }
     }
     double time_end = clock();
-    printf("Elapsed time: %lf\n", time_end - time_start);
+    printf("Elapsed time: %e\n", time_end - time_start);
+
 }
 //função que abre o arquivo txt  e faz a leitura dos funcionarios
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
@@ -80,42 +81,45 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
         perror("Erro ao abrir o arquivo");
         exit(1);
     }
-    if (ftell(arquivo) != 0)
-    {
-        int i;
-        for (i = 0; !feof(arquivo); i++)
-        {
-            // Ler os arquivo funcionario
-            fscanf(arquivo, "%s %s %d\n", nome, cargo, &documento);
-            funcionario[i] = cria_funcionario(nome, cargo, documento);
-        }
 
-        *tamanho = i;
+
+    int i;
+    for (i = 0; fscanf(arquivo, "%100s %20s %d", nome, cargo, &documento) != EOF; i++)
+    {
+        funcionario[i] = cria_funcionario(nome, cargo, documento);
     }
+
+    *tamanho = i;
     return (arquivo);
 }
+
 //função usada para gravar os dados ordenados em um arquivo. 
 void grava_arquivo(Funcionario **funcionario, int tamanho)
 {
-    FILE *arquivo = fopen("funcionarios.txt", "wt");
+    int contador;
+    FILE *arquivo = fopen("funcionarios.txt", "w");
+
     if (arquivo == NULL)
     {
         printf("Erro ao abrir arquivo!");
         exit(1);
     }
-    if (tamanho != 0)
-    {
-        insertion_sort_funcionarios(funcionario, tamanho);
-        for (int contador = 0; contador < tamanho; contador++)
-            fprintf(arquivo, "%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
-    }
+    
+    insertion_sort_funcionarios(funcionario, tamanho);
+    for (contador = 0; contador < tamanho; contador++)
+        fprintf(arquivo, "%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
+
+
     fclose(arquivo);
 }
 
 //função para imprimir os funcionarios, ordenando com a chamada da função insetion sort
 void imprime(Funcionario **funcionario, int tamanho)
 {
+
+    int contador;
     insertion_sort_funcionarios(funcionario, tamanho);
-    for (int contador = 0; contador < tamanho; contador++)
+    for (contador = 0; contador < tamanho; contador++)
         printf("%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
 }
+
