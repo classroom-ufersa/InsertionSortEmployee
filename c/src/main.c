@@ -9,10 +9,12 @@ int main() {
     int opcao;
     Funcionario **funcs = (Funcionario **)malloc(N_FUNCIONARIOS * sizeof(Funcionario *));
     int numFuncionarios = 0;
+
     FILE* arquivo = abrir_arquivo(funcs,&numFuncionarios);
 
     char nome[101];
     char cargo[21];
+
     int documento;
 
     do {
@@ -48,7 +50,6 @@ int main() {
                 else{
                     printf("Nenhum Funcionario Cadastrado!\n");
                 }
-
                 break;
             default:
            break;
@@ -63,3 +64,4 @@ int main() {
     free(funcs);
     return 0;
 }
+

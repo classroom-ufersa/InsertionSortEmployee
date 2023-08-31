@@ -68,6 +68,7 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
     }
     double time_end = clock();
     printf("Elapsed time: %e\n", time_end - time_start);
+
 }
 //função que abre o arquivo txt  e faz a leitura dos funcionarios
 FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
@@ -80,6 +81,7 @@ FILE *abrir_arquivo(Funcionario **funcionario, int *tamanho)
         perror("Erro ao abrir o arquivo");
         exit(1);
     }
+
 
     int i;
     for (i = 0; fscanf(arquivo, "%100s %20s %d", nome, cargo, &documento) != EOF; i++)
@@ -96,6 +98,7 @@ void grava_arquivo(Funcionario **funcionario, int tamanho)
 {
     int contador;
     FILE *arquivo = fopen("funcionarios.txt", "w");
+
     if (arquivo == NULL)
     {
         printf("Erro ao abrir arquivo!");
@@ -106,14 +109,17 @@ void grava_arquivo(Funcionario **funcionario, int tamanho)
     for (contador = 0; contador < tamanho; contador++)
         fprintf(arquivo, "%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
 
+
     fclose(arquivo);
 }
 
 //função para imprimir os funcionarios, ordenando com a chamada da função insetion sort
 void imprime(Funcionario **funcionario, int tamanho)
 {
+
     int contador;
     insertion_sort_funcionarios(funcionario, tamanho);
     for (contador = 0; contador < tamanho; contador++)
         printf("%s\t %s\t %d\n", funcionario[contador]->nome, funcionario[contador]->cargo, funcionario[contador]->documento);
 }
+
