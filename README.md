@@ -104,7 +104,6 @@ O pior e médio caso do algoritmo de ordenação Insertion Sort é  T(n) = O(n²
 # Vantagens e Desvantagens
 ## Vantagens 
 - Simples de se implementar
-- É eficiente quando sem tem poucos dados e está parcialmente ordenado
 - É um algoritmo estavel
 ## Desvantagens
 - Quando se tem muitos dados não é muito eficiente 
