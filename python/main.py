@@ -23,17 +23,22 @@ escolha = None
 if __name__ == '__main__':
     funcs = abrir_arquivo()
         
-    while escolha != 3:
+    escolha_int = None
+    while escolha_int != 3:
         print(menu)      
-        escolha = int(input(" -- Digite uma ação: "))
+        escolha = input(" -- Digite uma ação: ")
         
-        match escolha:
+        if escolha.isdigit():
+            escolha_int = int(escolha)
+        
+        match escolha_int:
             case 1:
                 name = input("Digite o nome: ")
                 office = input("Digite o cargo: ")
                 document = input("Digite o documento: ")
                 novo_func = Funcionario(name, office, document)
                 funcs.append(novo_func)
+                print("Cadastro Realizado!")
             case 2:
                 for func in funcs:
                     func.imprime_dados()

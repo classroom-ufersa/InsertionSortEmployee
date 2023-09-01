@@ -1,18 +1,19 @@
 import os
 from Funcionario import Funcionario
 
-size = os.path.getsize('funcionario.txt')
-isempty = size == 0
-
 def abrir_arquivo():
     funcs = []
-    if not isempty:
+    try:
         with open ('funcionario.txt', 'r', encoding='utf8') as arquivo:
             for linha in arquivo:
-                nome, cargo, documento = linha.strip().split()
-                funcionario = Funcionario(nome, cargo, documento)
-                funcs.append(funcionario)
-                
+                dados = linha.strip().split()
+                if len(dados)==3:
+                    funcionario = Funcionario(*dados)
+                    funcs.append(funcionario)           
+                    
+    except FileNotFoundError:
+        print("Arquivo 'funcionario.txt' não existe!")
+                            
     return funcs
 
 def salvar_arquivo(funcionarios):
