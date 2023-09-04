@@ -82,7 +82,7 @@ def insertion_sort(funcionarios):
         funcionarios[j + 1] = chave
 ```
 
-# Análise de complexidade
+# Análise de complexidade do tempo
 ## Big-O
 O pior e médio caso do algoritmo de ordenação Insertion Sort é  T(n) = O(n²), indicando que o tempo de execução cresce quadraticamente conforme o tamanho da entrada aumenta. O melhor caso desse algoritmo é T(n) = O(n), quando a entrada está parcialmente ordenada, resultando em um crescimento linear no tempo de execução em relação ao tamanho da entrada.
 ```
