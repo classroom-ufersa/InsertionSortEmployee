@@ -23,17 +23,6 @@ void maiusculo(char *s1, char *s2){
     s2[i] = '\0';
 }
 
-/*formata documento*/
-void formata_documento(char *cpf_str, char *new_cpf){
-    int i, a = 0;
-    while(i <= strlen(cpf_str)){
-        if(cpf_str[i]!='-' && cpf_str[i]!='.'){
-            new_cpf[a] = cpf_str[i];
-            a++;
-        }
-        i++;
-    }
-}
 
 int main() {
     void limpar_buffer();
