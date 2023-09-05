@@ -6,6 +6,14 @@ Implementar um algoritmo que manipula um tipo estruturado **Funcionarios** e man
 - [Carlos Gabriel Ferreira](https://github.com/GabasDev)
 - [Felipe Hidequel Santos da Silva](https://github.com/felipehidequel)
 - [Michely Vitória Costa Felix](https://github.com/MichelyFelix)
+
+# Tabela de conteudo
+- [Problemática](#problemática)
+- [Insertion Sort](#strings-com-insertion-sort)
+- [Implementação](#implementação)
+- [Análise Big-O](#análise-de-complexidade-do-tempo)
+- [Vantagens e Desvantagens](#vantagens-e-desvantagens)
+  
 # Strings com insertion sort
 **Ordenação de strings com Inserion Sort**
 
@@ -25,7 +33,7 @@ Imagine que você tem um baralho de cartas em mãos, e deseja organizá-las em o
 
 ![Insertion Sort](https://th.bing.com/th/id/R.52464cf460b30d1022da21dc9d927de0?rik=kRMcpjXJT0y1bw&riu=http%3a%2f%2fwww.thagomizer.com%2fimg%2fInsertionSortInPlace.gif&ehk=vVtb0fIpEJJDvV4BNjGSBhyb3kw95pH2vSA%2bEpsiNxY%3d&risl=&pid=ImgRaw&r=0)
 
-# Funções utilizadas
+# Implementação
 ## Em C
 - **Insertion Sort**
 ```
