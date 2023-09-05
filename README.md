@@ -9,11 +9,28 @@ Implementar um algoritmo que manipula um tipo estruturado **Funcionarios** e man
 
 # Tabela de conteudo
 - [Problemática](#problemática)
+- [Como usar](#como-compilar-e-executar)
 - [Insertion Sort](#strings-com-insertion-sort)
 - [Implementação](#implementação)
 - [Análise Big-O](#análise-de-complexidade-do-tempo)
 - [Vantagens e Desvantagens](#vantagens-e-desvantagens)
-  
+
+# Como compilar e executar
+## C
+```shell
+git clone https://github.com/classroom-ufersa/strings_com_insertion_sort.git
+cd strings_com_insertion_sort
+cd c/src/
+gcc -o main main.c
+./main
+```
+## Python
+```shell
+git clone https://github.com/classroom-ufersa/strings_com_insertion_sort.git
+cd strings_com_insertion_sort
+cd python/
+python3 main.py
+```
 # Strings com insertion sort
 **Ordenação de strings com Inserion Sort**
 
@@ -36,7 +53,7 @@ Imagine que você tem um baralho de cartas em mãos, e deseja organizá-las em o
 # Implementação
 ## Em C
 - **Insertion Sort**
-```
+```C
 void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 {
     int i, j;
@@ -78,7 +95,7 @@ void insertion_sort_funcionarios(Funcionario **funcionario, int tamanho)
 ```
 ## Em Python
 - **Insertion Sort**
-```
+```Python
 @staticmethod
 def insertion_sort(funcionarios):
     for i in range(1, len(funcionarios)):
@@ -93,7 +110,7 @@ def insertion_sort(funcionarios):
 # Análise de complexidade do tempo
 ## Big-O
 O pior e médio caso do algoritmo de ordenação Insertion Sort é  T(n) = O(n²), indicando que o tempo de execução cresce quadraticamente conforme o tamanho da entrada aumenta. O melhor caso desse algoritmo é T(n) = O(n), quando a entrada está parcialmente ordenada, resultando em um crescimento linear no tempo de execução em relação ao tamanho da entrada.
-```
+```latex
    T(n) = c1 + (c2+c3+c4+c8)(n-1) + n(n-1)(c5+c6+c7)
 
     T(n) = c + b(n-1) + n(n-1)*a
