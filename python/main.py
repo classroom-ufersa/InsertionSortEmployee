@@ -36,10 +36,16 @@ if __name__ == '__main__':
                 name = input("Digite o nome: ")
                 office = input("Digite o cargo: ")
                 document = input("Digite o documento: ")
-                novo_func = Funcionario(name, office, document)
+                novo_func = Funcionario(name.upper(), office.upper(), document)
                 funcs.append(novo_func)
                 print("Cadastro Realizado!")
             case 2:
+                print('Ordernando...')
+                start_time = time.time() 
+                Funcionario.insertion_sort(funcs)
+                end_time = time.time()
+                print(f'Elapsed time: {end_time-start_time}')
+                print("\nFuncionarios\n")
                 for func in funcs:
                     func.imprime_dados()
         
