@@ -9,13 +9,16 @@ name = None
 office = None
 document = None
 
-menu = """
-    -- BEM VINDO --
-    -- DIGITE A OPÇÃO DESEJADA --
-    -- 1 - CADASTRAR FUNCIONARIO --
-    -- 2 - LISTAR --
-    -- 3 - SAIR --
-    """
+def menu():
+    print( """
+        -- BEM VINDO --
+        -- DIGITE A OPÇÃO DESEJADA --
+        -- 1 - CADASTRAR FUNCIONARIO --
+        -- 2 - LISTAR --
+        -- 3 - SAIR --
+        """)
+    return input(" -- Digite uma ação: ")
+    
     
 escolha = None
 
@@ -24,9 +27,8 @@ if __name__ == '__main__':
     funcs = abrir_arquivo()
         
     escolha_int = None
-    while escolha_int != 3:
-        print(menu)      
-        escolha = input(" -- Digite uma ação: ")
+    while escolha_int != 3:      
+        escolha = menu()
         
         if escolha.isdigit():
             escolha_int = int(escolha)
