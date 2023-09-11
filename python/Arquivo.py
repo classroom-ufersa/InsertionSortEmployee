@@ -9,7 +9,8 @@ def abrir_arquivo():
                 dados = linha.strip().split()
                 if len(dados)==3:
                     funcionario = Funcionario(*dados)
-                    funcs.append(funcionario)           
+                    funcs.append(funcionario)   
+            arquivo.flush()        
                     
     except FileNotFoundError:
         print("Arquivo 'funcionario.txt' não existe!")
