@@ -24,14 +24,14 @@ class Funcionario:
         self._documento = documento
         
     def imprime_dados(self):
-        print(f'{self.nome} {self.cargo} {self.documento}')
+        print(f'Funcionario {self.nome} - Cargo {self.cargo} - Documento {self.documento}')
         
     @staticmethod
     def insertion_sort(funcionarios):
         for i in range(1, len(funcionarios)):
             chave = funcionarios[i]
             j = i - 1
-            while j >= 0 and chave.nome.upper() < funcionarios[j].nome.upper():
+            while j >= 0 and chave.nome < funcionarios[j].nome:
                 funcionarios[j + 1] = funcionarios[j]
                 j -= 1
             funcionarios[j + 1] = chave
