@@ -5,10 +5,6 @@ import time
 
 funcs = []
 
-name = '0'
-office = '0'
-document = 'doc'
-
 def menu():
     print( """
         ===========MENU===============
@@ -36,7 +32,11 @@ if __name__ == '__main__':
     funcs = abrir_arquivo()
         
     escolha_int = None
-    while escolha_int != 3:      
+    while escolha_int != 3:
+        # inicializa as variaveis no formato correto
+        name = '0'
+        office = '0'
+        document = 'doc'      
         escolha = menu()
         
         if escolha.isdigit():
@@ -53,15 +53,15 @@ if __name__ == '__main__':
                 while not document.isdigit():
                     document = input("Digite o documento (somente números): ")
                     is_digit_exepction(document, 0)
-                    
+
                 print("Cadastrando...")    
                 novo_func = Funcionario(name.upper(), office.upper(), document)
                 funcs.append(novo_func)
                 print("Cadastro Realizado!")
             case 2:
+                Funcionario.insertion_sort(funcs)
                 print("Lista de funcionarios:")
-                for func in funcs:
-                    func.imprime_dados()
+                Funcionario.lista_funcionarios(funcs)
             case 3:
                 print("Saindo...")
             case _ :
